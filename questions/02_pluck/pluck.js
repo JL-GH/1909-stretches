@@ -1,6 +1,6 @@
 /*
 Write a function that takes an object and an array of keys.
-The function should return a new object with the keys from the array 
+The function should return a new object with the keys from the array
 and the associated values from passed in object.
 
 const obj1 = { a: 1, b: true };
@@ -17,12 +17,30 @@ returns { a: 1, c: 42};
 */
 
 function pluck(obj, elements) {
-  const newObj = {};
-  elements.forEach(el => {
-    if (obj[el] !== undefined) newObj[el] = obj[el];
-  });
+  let newObj = {}
 
-  return newObj;
+  let keys = Object.keys(obj)
+
+  elements.forEach((elem) => {
+    if (keys.includes(elem)) {
+      newObj[elem] = obj[elem]
+    }
+  })
+
+  return newObj
 }
 
 module.exports = { pluck };
+
+
+
+
+
+
+
+  // const newObj = {};
+  // elements.forEach(el => {
+  //   if (obj[el] !== undefined) newObj[el] = obj[el];
+  // });
+
+  // return newObj;
