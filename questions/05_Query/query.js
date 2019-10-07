@@ -49,7 +49,7 @@ function query(arr, obj) {
   let result = []
   arr.forEach((elem) => {
     for (let i = 0; i < keys.length; i ++) {
-      if (elem[keys[i]] === obj.keys[i]) {
+      if (elem[keys[i]] === obj[keys[i]]) {
         result.push(elem)
       }
     }
