@@ -8,7 +8,7 @@ const checkAnagrams = (str1, str2) => {
     let idx = str1[i]
     if (arr.includes(idx)) {
       let find = arr.indexOf(idx)
-      arr.splice(find)
+      arr.splice(find,1)
     }
   }
 
