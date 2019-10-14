@@ -12,8 +12,13 @@ const checkAnagrams = (str1, str2) => {
     }
   }
 
-  if (arr.length === 0) {
-    return true
+  if (str1.length === str2.length) {
+    if (arr.length === 0) {
+      return true
+    }
+    else {
+      return false
+    }
   }
   else {
     return false
