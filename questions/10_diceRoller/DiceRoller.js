@@ -5,17 +5,28 @@
 class DiceRoller {
   //YOUR CODE
   constructor (sides, numDice) {
-    let totalSides = sides
-    let numOfDice = numDice
+    if (!sides || !numDice) {
+      throw new Error('Missing param')
+    }
+    if (typeof sides !== 'number' || typeof numDice !== 'number') {
+      throw new Error('NaN')
+    }
+    if (sides < 1 || numDice < 0) {
+      throw new Error('Error, must be numbers')
+    }
+    this.sides = sides
+    this.numDice = numDice
+    this.history = []
   }
 
   roll() {
-    let totalVal = 0
+    let allRolls = []
 
-    for (let i = 1; i <= this.numOfDice; i++) {
-      totalVal += Math.floor(Math.random() * this.totalSides)
+    for (let i = 1; i <= this.numDice; i++) {
+      allRolls.push(Math.floor(Math.random() * this.sides + 1))
     }
-    return totalVal
+    this.history.push(allRolls)
+    return allRolls
   }
 
 }
