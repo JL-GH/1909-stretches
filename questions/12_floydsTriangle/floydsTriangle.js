@@ -14,9 +14,10 @@ const floydsTriangle = n => {
       count ++
       result += count
     }
+    if (count )
     result += `\n`
   }
-  return result
+  return result.slice(0,-1)
 };
 
 module.exports = { floydsTriangle };
