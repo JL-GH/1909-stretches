@@ -14,20 +14,22 @@ class DiceRoller {
     if (sides < 1 || numDice < 0) {
       throw new Error('Error, must be numbers')
     }
-    this.sides = sides
-    this.numDice = numDice
+    // this.sides = sides
+    // this.numDice = numDice
     this.history = []
-  }
 
-  roll() {
-    let allRolls = []
+    this.roll = () => {
+      let allRolls = []
 
-    for (let i = 1; i <= this.numDice; i++) {
-      allRolls.push(Math.floor(Math.random() * this.sides + 1))
+      for (let i = 1; i <= this.numDice; i++) {
+        allRolls.push(Math.floor(Math.random() * this.sides + 1))
+      }
+      this.history.push(allRolls)
+      return allRolls
     }
-    this.history.push(allRolls)
-    return allRolls
   }
+
+
 
 }
 
