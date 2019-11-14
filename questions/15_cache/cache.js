@@ -1,15 +1,17 @@
 function cache(func) {
-  let count = 0
   if (typeof func !== 'function') {
     throw new Error('Input must be a function.')
   }
+  const memo = {}
 
-  if(count === 0) {
-    count ++
-    return func
-  }
-  else {
-    return ''
+  return function chacedAdder(...num) { // the spread operator is putting the arguments in an array
+    if (memo[num] !== undefined) {
+      return memo[num]
+    }
+    else {
+      memo[num] = func(...num) // here the spread operator is breaking out the values from the array into the callback function
+      return memo[num]
+    }
   }
 }
 
