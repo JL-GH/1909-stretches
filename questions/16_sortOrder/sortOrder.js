@@ -4,9 +4,10 @@ and a key for the return value.
 */
 
 function sortOrder(arrObj, sortKey, returnVal) {
-  const letters = 'abcdefghijklmnopqrstuvwxyz'
   let newArr = []
   let prevVal = ''
+
+
   for (let i = 0; i < arrObj.length; i++) {
     let curObj = arrObj[i]
     if (newArr.length === 0) {
