@@ -16,20 +16,34 @@
 
 // YOUR CODE (intentionally blank):
 
-class Next {
-  constructor(someArr) {
-    const arrLength = someArr.length
-    let curIdx = 0
-
-    this.arr = someArr
-
-    this.next = () => {
-      if (curIdx < arrLength) {
-        console.log(this.arr[curIdx])
-        curIdx ++
-      }
-    }
+Array.prototype.next = function () {
+  if(!this.nextIdx) {
+    this.nextIdx = 0;
   }
+  console.log(this[this.nextIdx])
+  this.nextIdx += 1
+
+  if(this.nextIdx >= this.length){
+    this.nextIdx = 0
+  }
+  return this
 }
+
+// missed the hint..
+// class Next {
+//   constructor(someArr) {
+//     const arrLength = someArr.length
+//     let curIdx = 0
+
+//     this.arr = someArr
+
+//     this.next = () => {
+//       if (curIdx < arrLength) {
+//         console.log(this.arr[curIdx])
+//         curIdx ++
+//       }
+//     }
+//   }
+// }
 
 // no export statement required
