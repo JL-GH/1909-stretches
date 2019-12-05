@@ -81,7 +81,7 @@ describe("Calculator", () => {
     expect(myCalc.value).toBe(20);
   });
 
-  xtest("should not be able to change value directly. Really.", () => {
+  test("should not be able to change value directly. Really.", () => {
     const myCalc = new Calculator();
     myCalc
       .add(22)

@@ -1,33 +1,40 @@
 class Calculator {
   constructor(){
-    this.value = 0
-  }
+    let value = 0
 
-  add(num) {
-    this.value = this.value + num
-    return this
-  }
-  subtract(num) {
-    this.value = this.value - num
-    return this
-  }
-  multiply(num) {
-    this.value = this.value * num
-    return this
-  }
-  divide(num) {
-    if (num === 0) {
+    this.add = (num) => {
+      value = value + num
       return this
     }
-    else {
-      this.value = this.value / num
+    this.subtract = (num) =>  {
+      value = value - num
+      return this
     }
-    return this
+    this.multiply = (num) =>  {
+      value = value * num
+      return this
+    }
+    this.divide = (num) => {
+      if (num === 0) {
+        return this
+      }
+      else {
+        value = value / num
+      }
+      return this
+    }
+    this.clear = () =>  {
+      value = 0
+      return this
+    }
+    this.getValue = () => {
+      return value
+    }
   }
-  clear() {
-    this.value = 0
-    return this
+  get value() {
+    return this.getValue()
   }
+
 }
 
 module.exports = { Calculator };
